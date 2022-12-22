@@ -1,0 +1,261 @@
+%===================================================================================
+% JORNADA CIENTÍFICA ESTUDIANTIL - MATCOM,
+%===================================================================================
+% Esta plantilla ha sido diseñada para ser usada en los artículos de la
+% Jornada Científica Estudiantil, MatCom.
+%
+% Por favor, siga las instrucciones de esta plantilla y rellene en las secciones
+% correspondientes.
+%
+% NOTA: Necesitará el archivo 'jcematcom.sty' en la misma carpeta donde esté este
+%       archivo para poder utilizar esta plantila.
+%===================================================================================
+
+
+
+%===================================================================================
+% PREÁMBULO
+%-----------------------------------------------------------------------------------
+\documentclass[a4paper,10pt,twocolumn]{article}
+
+%===================================================================================
+% Paquetes
+%-----------------------------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{jcematcom}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage[pdftex]{hyperref}
+%\usepackage{stix}
+%-----------------------------------------------------------------------------------
+% Configuración
+%-----------------------------------------------------------------------------------
+\hypersetup{colorlinks,%
+	    citecolor=black,%
+	    filecolor=black,%
+	    linkcolor=black,%
+	    urlcolor=blue}
+
+%===================================================================================
+
+
+
+%===================================================================================
+% Presentacion
+%-----------------------------------------------------------------------------------
+% Título
+%-----------------------------------------------------------------------------------
+\title{Segmentaci\'on de \'Ulceras de Pie Diab\'etico}
+
+%-----------------------------------------------------------------------------------
+% Autores
+%-----------------------------------------------------------------------------------
+\author{Jes\'us Aldair Alfonso P\'erez \\
+\name  \email \href{mailto:aldairalfonsoperez@gmail.com}{aldairalfonsoperez@gmail.com}
+    \\ \addr C-312  \AND
+Mauro Jos\'e Bolado Vizoso \\
+\name   \email \href{mailto:maurovizoso@gmail.com}{maurovizoso@gmail.com}
+    \\ \addr C-311}
+
+%-----------------------------------------------------------------------------------
+% Tutores
+%-----------------------------------------------------------------------------------
+\tutors{\\
+Alejandro Mesejo, \emph{Universidad de La Habana} \\}
+
+
+%-----------------------------------------------------------------------------------
+% Headings
+%-----------------------------------------------------------------------------------
+\jcematcomheading{\the\year}{1-\pageref{end}}{Modelos Matem\'aticos Aplicados}
+
+%-----------------------------------------------------------------------------------
+\ShortHeadings{}{Autores}
+%===================================================================================
+
+
+
+%===================================================================================
+% DOCUMENTO
+%-----------------------------------------------------------------------------------
+\begin{document}
+
+%-----------------------------------------------------------------------------------
+% NO BORRAR ESTA LINEA!
+%-----------------------------------------------------------------------------------
+\twocolumn[
+%-----------------------------------------------------------------------------------
+
+\maketitle
+
+%===================================================================================
+% Resumen y Abstract
+%-----------------------------------------------------------------------------------
+\selectlanguage{spanish} % Para producir el documento en Español
+
+%-----------------------------------------------------------------------------------
+% Resumen en Español
+%-----------------------------------------------------------------------------------
+\begin{abstract}
+
+	La segmentaci\'on de im\'agenes es el proceso de particionar una imagen digital 
+	en m\'ultiples segmentos de im\'agenes, tambien conocidas como regiones en im\'agenes 
+	o objetos en im\'agenes. Este \'articulo hace \'enfasis en espacios de colores y en una 
+	aplicaci\'on de corte en grafos. Se presenta dos algoritmo para segmentar \'ulceras de pie 
+	diab\'etico, se realiza una comparaci\'on de los resultados obtenidos entre los algoritmo 
+	propuestos. Se concluye que el algoritmo basado en corte en grafos es m\'as eficiente que 
+	el basado en colores.
+
+\end{abstract}
+
+%-----------------------------------------------------------------------------------
+% English Abstract
+%-----------------------------------------------------------------------------------
+\vspace{0.5cm}
+
+\begin{enabstract}
+	
+	Image segmentation is the process of partitioning a digital image into multiple segments 
+	also known as image regions or objects. This article focuses on color spaces and on a 
+	graph cut application. Two algorithms are presented to segment diabetic foot ulcers, a 
+	comparison of the results obtained between the proposed algorithms is made. It is concluded 
+	that the algorithm based on graph cut is more efficient than the one based on colors.
+
+\end{enabstract}
+
+%-----------------------------------------------------------------------------------
+% Palabras clave
+%-----------------------------------------------------------------------------------
+\begin{keywords}
+DFU: Diabetic Foot Ulcers
+
+\end{keywords}
+
+%-----------------------------------------------------------------------------------
+% Temas
+%-----------------------------------------------------------------------------------
+\begin{topics}
+Segmentaci\'on de \'Ulceras de Pie Diab\'etico
+\end{topics}
+
+
+%-----------------------------------------------------------------------------------
+% NO BORRAR ESTAS LINEAS!
+%-----------------------------------------------------------------------------------
+\vspace{0.8cm}
+]
+%-----------------------------------------------------------------------------------
+
+
+%===================================================================================
+
+%===================================================================================
+% Introducción
+%-----------------------------------------------------------------------------------
+\section{Introducción}\label{sec:intro}
+%---------------------------------------------------------------
+
+% An introduction in spanish about image segmentation
+
+La segmentaci\'on
+
+
+Aqu\'{i} se introduce la tem\'{a}tica del trabajo, motivaci\'{o}n, al final se explica cu\'{a}l ser\'{a} la estructura, es decir c\'{o}mo han subdividido su trabajo, importante lo que est\'{e} tomado de la literatura deben referenciarlo en el lugar que corresponda dentro del cuerpo del trabajo y listar la referencias al final. Todas las referencias listadas deben estar referenciadas en alguna parte del trabajo.
+Para elegir un formato pde escritura para las referencias, ponen el t\'{i}tulo del trabajo en google scholar y abren Cite donde est\'{a}n las comillas y elegin un formato y luego donde dice Bibtex, y solo tienen que copiar y pegar.
+
+%===================================================================================
+
+
+
+%===================================================================================
+% Desarrollo
+%-----------------------------------------------------------------------------------
+\section{Desarrollo}\label{sec:dev}
+%-----------------------------------------------------------------------------------
+A partir de aqu\'{i} comienza el desarrollo del trabajo, que pueden dividir en secciones y subsecciones y que si necesitan las pueden etiquetar.
+
+Generalmente uno dedica las primeras secciones a presentar el problema que va a resolver, a explicar elementos y resultados te\'{o}ricos que ser\'{a}n usados en el trabajo. Luego una secci\'{o}n para explicar la propuesta de soluci\'{o}n.
+En este contexto aparece siempre una secci\'{o}n de experimentaci\'{o}n, donde se explican los experimentos que se realizan y se exponen los resultados y en una subsecci\'{o}n se discuten los resultados, No es lo mismo exponer los resultados que discutirlos, generalmente la discusi\'{o}n lleva comparaciones con el estado del arte, pero como estos trabajos con peque\~{n}os se har\'{a} seg\'{u}n  vean con sus tutores.
+Las conclusiones no pueden faltar, y siempre es interesante oir recomendaciones
+ 
+ 
+
+%-----------------------------------------------------------------------------------
+	\subsection{}\label{}
+
+
+%-----------------------------------------------------------------------------------
+\subsection{}
+
+
+
+
+%-----------------------------------------------------------------------------------
+
+
+
+
+%-----------------------------------------------------------------------------------
+
+
+%-----------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------------
+
+ 
+ 
+
+
+
+%-----------------------------------------------------------------------------------
+
+
+
+
+
+
+%-----------------------------------------------------------------------------------
+
+\section{Experimentaci\'{o}n y resultados}
+\subsection{Discusi\'{o}n}
+
+%===================================================================================
+% Conclusiones
+%-----------------------------------------------------------------------------------
+\section{Conclusiones}\label{sec:conc}
+ 
+ 
+
+
+
+ 
+
+%===================================================================================
+
+
+
+
+
+%===================================================================================
+% Bibliografía
+%-----------------------------------------------------------------------------------
+\begin{thebibliography}{99}
+%-----------------------------------------------------------------------------------
+	\bibitem{}
+
+%-----------------------------------------------------------------------------------
+\end{thebibliography}
+
+%-----------------------------------------------------------------------------------
+
+\label{end}
+
+\end{document}
+
+%===================================================================================
