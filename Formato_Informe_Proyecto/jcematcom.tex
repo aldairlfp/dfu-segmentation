@@ -159,13 +159,26 @@ Segmentaci\'on de \'Ulceras de Pie Diab\'etico
 
 % An introduction in spanish about image segmentation
 
+RGB es uno de los cinco principales modelos de espacio de color, cada uno de los cuales 
+tiene muchas ramificaciones. Hay tantos espacios de color porque hay diferentes espacios de 
+color que son \'utiles para diferentes prop\'ositos. El modelo CMYK es un modelo de color 
+adecuado para la impresi\'on de color, mientras que el modelo RGB es adecuado para la 
+visualizaci\'on de color en una pantalla. En ciertos tipos de campos m\'edicos, los portaobjetos 
+de vidrio montados con muestras de tejido te\'~nido se escanean y guardan como im\'agenes. Estos 
+pueden ser analizados con el espacio HED, una representaci\'on de las saturaciones de los tipos 
+de manchas. HSV y HSL son descripciones de tono, saturaci\'on y brillo/luminancia, que son 
+especialmente \'utiles para identificar el contraste en las im\'agenes. En realidad, el color 
+es un fen\'omeno continuo, lo que significa que hay un n\'umero infinito de colores. 
+Los espacios de color, sin embargo, representan el color a trav\'es de estructuras discretas 
+(un n\'umero fijo de valores enteros de n\'umeros enteros), lo cual es aceptable ya que el ojo 
+humano y la percepci\'on tambi\'en son limitados. Los espacios de color son totalmente capaces de 
+representar todos los colores entre los que somos capaces de distinguir.
+
 El trabajo consiste en segmentar \'ulceras en im\'agenes m\'edicas. En el trabajo se presenta el desarrollo
 del modelo de \textit{Segmentaci\'on por Colores} y se deja como propuesta de trabajo el desarrollo del modelo
 \textit{Corte M\'inimo} para la segmentaci\'on de \'ulceras. Se realiza una evaluaci\'on de los resultados del modelo desarrollado
 y se compara con las realidad. Cabe mencionar que el problema a resolver con la investigaci\'on no tiene una buena soluci\'on
-computacional, solo se puede realizar una aproximaci\'on a la realidad. Existen algoritmos muy complejos y se ataca actualmente el problema con
-\tetxit{Machine Learning}, sin lograr resultados del todo contundentes, por eso nos basamos en los cl\'asicos algoritmos matem\'aticos para intentar 
-una soluici\'on mejor modelada del problema. 
+computacional, solo se puede realizar una aproximaci\'on a la realidad. Existen algoritmos muy complejos y se ataca actualmente el problema con \tetxit{Machine Learning}, sin lograr resultados del todo contundentes, por eso nos basamos en los cl\'asicos algoritmos matem\'aticos para intentar una soluici\'on mejor modelada del problema. 
 
 %===================================================================================
 
@@ -213,7 +226,6 @@ queda un valor entre entre $0$ y $1$ que se moldea luego con la funci\'on:\\
 	\item $d_{(x,y)}$ es el valor absoluto la diferencia de gris entre los pixeles $x$ y $y$.
 \end{itemize}
 
-\\
 Con esta f\'ormula se asegura que el conjunto de aristas que representen el borde de la secci\'on de la imagen que se desea segmentar 
 tengan los menores valores de flujo, cuando se le aplica el algoritmo de corte m\'inimo a este grafo el resultado es que queda todo lo similar a la 
 fuente en el mismo lado del corte, traducido al problema es que todo aquella secci\'on de la imagen similar a lo que se quiere segmentar queda
