@@ -187,10 +187,35 @@ Las conclusiones no pueden faltar, y siempre es interesante oir recomendaciones
 
 
 %-----------------------------------------------------------------------------------
-\subsection{}
+\subsection{Corte M\'inimo}
 
+\paragraph*{Por qu\'e corte m\'inimo?:}
+Pues nada, la idea de realizar el corte m\'inimo viene tras modelar la imagen como un grafo, d\'onde los pixeles son los nodos,
+las aristas estan dada por la 8-vecindad de los pixeles, donde el inverso de la diferencia de color
+entre dos pixeles adyacentes es el peso/capacidad de las aristas. Dicho lo anterior se puede modelar el problema de la segmentaci\'on de esa manera,
+dado que se selecciona un pixel(nodo) que pertenezca al objeto a segmentar de la imagen como fuente y otro que pertenezca al fondo como receptor,
+se busca el corte m\'inimo que separe ambos pixeles y que tenga el menor costo, dicho corte m\'inimo es el que se realiza para segmentar la imagen.
+Dejando como resultado los pixeles con color similar a la fuente separados del resto de los pixeles de la imagen.
 
+\paragraph*{Modelaci\'on del problema:}
+Para modelar el problema se lleva la imagen a escala de grises con lo que se convierte todo el problema a simplemente 
+determinar que tan distinto es el gris de un pixel a otro. Para sopesar cada capacidad de flujo lo que se hace es determinar la
+diferencia entre los grises de ambos pieles adyacentes y se divide entre el m\'aximo valor de gris de la imagen, de esta manera
+queda un valor entre entre $0$ y $1$ que se moldea luego con la funci\'on:\\
+\begin{equation}
+	f_{(x,y)} = \frac{1}{ln(\frac{w_{(x,y)}}{255})} \mathbb{1}_{w_{(x,y)} \neq 0}\\
+	f_{(x,y)} = \infty \mathbb{1}_{w_{(x,y)} = 0}
+\end{equation}
+\\
+Con esta f\'ormula se asegura que el conjunto de aristas que representen el borde de la secci\'on de la imagen que se desea segmentar 
+tengan los menores valores de flujo, cuando se le aplica el algoritmo de corte m\'inimo a este grafo el resultado es que queda todo lo similar a la 
+fuente en el mismo lado del corte, traducido al problema es que todo aquella secci\'on de la imagen similar a lo que se quiere segmentar queda
+separada del resto de la imagen.\\
 
+\paragraph*{Algoritmo de corte m\'inimo:}
+El problema del corte m\'inimo tiene una soluci\'on por el algoritmo de \textit{Ford-Fulkerson} que es un algoritmo de flujo m\'aximo,
+dado que el problema del coste m\'inimo es el dual del problema del flujo m\'aximo se puede aplicar el algoritmo de \textit{Ford-Fulkerson},
+con lo que queda resuelto el problema planteado como hip\'otesis inicial.\\
 
 %-----------------------------------------------------------------------------------
 
