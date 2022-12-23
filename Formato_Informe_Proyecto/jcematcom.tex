@@ -203,9 +203,14 @@ determinar que tan distinto es el gris de un pixel a otro. Para sopesar cada cap
 diferencia entre los grises de ambos pieles adyacentes y se divide entre el m\'aximo valor de gris de la imagen, de esta manera
 queda un valor entre entre $0$ y $1$ que se moldea luego con la funci\'on:\\
 \begin{equation}
-	f_{(x,y)} = \frac{1}{ln(\frac{w_{(x,y)}}{255})} \mathbb{1}_{w_{(x,y)} \neq 0}\\
-	f_{(x,y)} = \infty \mathbb{1}_{w_{(x,y)} = 0}
+	f_{(x,y)} = \frac{1}{ln(\frac{d_{(x,y)}}{255})} \mathbb{1}_{d_{(x,y)} \neq 0}\\
+	f_{(x,y)} = \infty \mathbb{1}_{d_{(x,y)} = 0}
 \end{equation}
+\begin{itemize}
+	\item $f_{(x,y)}$ es la capacidad de flujo de la arista que une los pixeles $x$ y $y$.
+	\item $d_{(x,y)}$ es el valor absoluto la diferencia de gris entre los pixeles $x$ y $y$.
+\end{itemize}
+
 \\
 Con esta f\'ormula se asegura que el conjunto de aristas que representen el borde de la secci\'on de la imagen que se desea segmentar 
 tengan los menores valores de flujo, cuando se le aplica el algoritmo de corte m\'inimo a este grafo el resultado es que queda todo lo similar a la 
@@ -217,6 +222,10 @@ El problema del corte m\'inimo tiene una soluci\'on por el algoritmo de \textit{
 dado que el problema del coste m\'inimo es el dual del problema del flujo m\'aximo se puede aplicar el algoritmo de \textit{Ford-Fulkerson},
 con lo que queda resuelto el problema planteado como hip\'otesis inicial.\\
 
+\paragraph*{Recomendaci\'on:}
+La implementaci\'on de este algoritmo no est\'a abarcada en este trabajo dado que nos centramos m\'as en la \textit{Segmentaci\'on por Colores},
+sin embargo se recomienda la implementaci\'on de este algoritmo para la segmentaci\'on de la imagen por bordes, 
+ya que se debe obtener mejores resultados que en el algoritmo desarrollado en el trabajo. 
 %-----------------------------------------------------------------------------------
 
 
@@ -255,11 +264,16 @@ con lo que queda resuelto el problema planteado como hip\'otesis inicial.\\
 %-----------------------------------------------------------------------------------
 \section{Conclusiones}\label{sec:conc}
  
- 
+Los Resultados obtenidos nos permitieron llegar a la conclusi\'on de la ineficacia del algoritmo de 
+\textit{Segmentaci\'on por Colores} para la segmentaci\'on de la imagen, dado que los resultados obtenidos no
+fueron del todo satisfactorios por las condiciones del problema, producto que las caracter\'isticas de las  
+\'ulceras son adversas para este algoritmo. De donde los autores del trabajo recomendamos no utilizar este algoritmo para su segmentaci\'on.
+\\
+\\
 
-
-
- 
+Tambi\'en se dej\'o como propuesta un algoritmo que, por la naturaleza del mismo, debe 
+tener mejores resultados en este campo que el desarrollado en el trabajo. Con esto consideramos satisfactoria la investigaci\'on y esperamos
+que los resultados obtenidos sean de utilidad para la comunidad cient\'ifica.
 
 %===================================================================================
 
